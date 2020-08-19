@@ -12,35 +12,39 @@
 
     <div class="screen" onclick="toggleMenu()"></div>
 
-    <div class="location-modal-container" hidden >
+    <div class="location-modal-container" hidden>
         <div class="centering-container">
             <input type="text" class="location-name" placeholder="Enter location name...">
             <button class="location-name-btn" onclick="toggleMenu()">GO</button>
         </div>
     </div>
-    
+
 
     <section class="container">
 
         <header class="navbar">
-           
-            <div class="copy-nav">
-                <h1>Travel-tip</h1>
-                <p class="copy-info">Location:</p>
-                <button class="copy-location-btn">Copy Location</button>
-            </div>
 
-            <div class="log-nav">
-                <input type="text" class="set-location">
-                <button class="set-location-btn">GO</button>
-                <button class="my-location-btn">My Location</button>
-              
+            <!-- <div class="log-nav"> -->
+            <h1 class="log-nav">Travel-tip</h1>
+            <!-- </div> -->
+
+            <div class="copy-nav">
+                <div class="copy-subnav">
+                    <div class="copy-info"></div>
+                    <button class="copy-location-btn">Copy Location</button>
+                </div>
+                <div class="location-subnav">
+                    <input type="text" class="set-location">
+                    <button class="set-location-btn">GO</button>
+                    <button class="my-location-btn">My Location</button>
+                </div>
+
             </div>
 
         </header>
 
         <main class="navigation-container">
-            <div id="map" style="width: 100%; height: 400px;"></div>
+            <div id="map" style="width: 100%; height: 500px;"></div>
 
             <div class="navigation-info-container">
                 <div class="weather-container"></div>
@@ -60,7 +64,7 @@
     </section>
 
     <script>
-        function toggleMenu() { 
+        function toggleMenu() {
             document.body.classList.toggle('menu-open');
         }
     </script>
