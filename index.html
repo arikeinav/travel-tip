@@ -10,21 +10,31 @@
 
 <body>
 
+    <div class="screen" onclick="toggleMenu()"></div>
+
+    <div class="location-modal-container" hidden >
+        <div class="centering-container">
+            <input type="text" class="location-name" placeholder="Enter location name...">
+            <button class="location-name-btn" onclick="toggleMenu()">GO</button>
+        </div>
+    </div>
+    
+
     <section class="container">
 
         <header class="navbar">
+           
+            <div class="copy-nav">
+                <h1>Travel-tip</h1>
+                <p class="copy-info">Location:</p>
+                <button class="copy-location-btn">Copy Location</button>
+            </div>
 
             <div class="log-nav">
-                <h1>Travel-tip</h1>
                 <input type="text" class="set-location">
                 <button class="set-location-btn">GO</button>
                 <button class="my-location-btn">My Location</button>
-                <input type="text" class="location-name" placeholder="Enter location name...">
-                <button class="location-name-btn">GO</button>
-            </div>
-            <div class="copy-nav">
-                <p class="copy-info">Location:</p>
-                <button class="copy-location-btn">Copy Location</button>
+              
             </div>
 
         </header>
@@ -48,6 +58,12 @@
             <h5>Coffeerights</h5>
         </footer>
     </section>
+
+    <script>
+        function toggleMenu() { // css help function for hamburger menu
+            document.body.classList.toggle('menu-open');
+        }
+    </script>
 
     <script type="module" src="js/map.contrroler.js"></script>
 </body>

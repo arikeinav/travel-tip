@@ -43,7 +43,8 @@ export function initMap(lat = 32.0749831, lng = 34.9120554) {
                 var latitude = e.latLng.lat();
                 var longitude = e.latLng.lng();
                 addMarker(e.latLng)
-                var location = prompt('please enter the location name')
+                var location = toggleMenu();
+                // var location = prompt('please enter the location name')
                 if (!location) return
                 locService.createLocation(location, latitude, longitude)
                 locService.getLocs()
