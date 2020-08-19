@@ -1,6 +1,7 @@
 import { locService } from './services/loc.service.js'
 
 var map;
+var userPos;
 
 
 window.onload = () => {
@@ -13,7 +14,7 @@ window.onload = () => {
 
     locService.getPosition()
         .then(pos => {
-
+            userPos = pos.coords
             console.log('User position is:', pos.coords);
         })
         .catch(err => {
@@ -21,12 +22,12 @@ window.onload = () => {
         })
 }
 
-document.querySelector('.btn').addEventListener('click', (ev) => {
-    console.log('Aha!', ev.target);
-    panTo(35.6895, 139.6917);
+document.querySelector('.my-location-btn').addEventListener('click', (ev) => {
+    addMarker({ lat: userPos.latitude, lng: userPos.longitude })
+    panTo(userPos.latitude, userPos.longitude);
 })
 
-export function initMap(lat = 32.0749831, lng = 34.9120554) {
+function initMap(lat = 32.0749831, lng = 34.9120554) {
     console.log('InitMap');
     return _connectGoogleApi()
         .then(() => {
@@ -58,7 +59,7 @@ function addMarker(loc) {
     var marker = new google.maps.Marker({
         position: loc,
         map: map,
-        title: 'Hello World!'
+        title: loc.locationName
     });
     return marker;
 }
@@ -83,19 +84,34 @@ function _connectGoogleApi() {
 }
 
 
-
-
-
-
-
-
-
 function renderLocations(locs) {
-
     var strHtml = locs.map(function(location) {
-        return `<li class="location">${location.locationName}</li>`
+        return `<li class="location">${location.locationName}
+        <button class="btn-delete" data-id="${location.id}">x</button>
+        <button class="btn-go-to" data-id="${location.id}">Go</button>
+        </li>`
     })
-    console.log(locs)
-    document.querySelector('.locations').innerHTML += strHtml.join('')
+    document.querySelector('.locations').innerHTML = strHtml.join('')
+    addEvenetListeners()
 
+}
+
+
+
+function addEvenetListeners() {
+    document.querySelector('.locations').onclick = function(ev) {
+        if (!ev.target.dataset.id) return;
+        const itemId = ev.target.dataset.id;
+        if (ev.target.classList.contains('btn-delete')) {
+            locService.removeItem(itemId)
+                .then(renderLocations)
+        } else if (ev.target.classList.contains('btn-go-to')) {
+            locService.getLocationLatLng(itemId)
+                .then(loc => {
+                    panTo(loc.lat, loc.lng)
+                    addMarker({ lat: loc.lat, lng: loc.lng })
+                })
+        }
+
+    }
 }
