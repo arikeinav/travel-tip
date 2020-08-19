@@ -111,6 +111,7 @@ input:hover {
 .weather-container {
     flex-grow: 1;
     background-color:#fdfcfb;
+    min-height: 200px;
    
 }
 
