@@ -7,11 +7,7 @@ body {
     background-color: #e9e9e9;
 }
 
-button,
-input {
-    border: none;
-    border-radius: 2px;
-}
+
 
 button:hover,
 input:hover {
@@ -37,6 +33,12 @@ input:hover {
     justify-content: space-between;
     align-items: center;
     color: #fff
+}
+
+.navbar button,
+input {
+    border: none;
+    border-radius: 2px;
 }
 
 .log-nav {
@@ -120,6 +122,31 @@ input:hover {
     background-color: #f5f0ed;
   
 }
+.btn-go-to {
+    margin: 2px;
+    }
+.btn-go-to:hover {
+    background-color: #00ff40;
+    margin: 2px;
+    }
+.btn-go-to {
+    margin: 2px;
+    }
+
+
+.btn-delete {
+    float: right;
+    margin: 2px;
+}
+.btn-delete:hover {
+   background-color: red;
+ 
+}
+.btn-delete {
+    float: right;
+}
+
+
 
 #map {
     flex-grow: 1;
