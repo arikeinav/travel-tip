@@ -10,12 +10,12 @@
 
 <body>
 
-    <div class="screen"></div>
+    <div class="screen" onclick="toggleMenu()"></div>
 
     <div class="location-modal-container" hidden>
         <div class="centering-container">
             <input type="text" class="location-name" placeholder="Enter location name...">
-            <button class="location-name-btn">GO</button>
+            <button class="location-name-btn" onclick="toggleMenu()">GO</button>
         </div>
     </div>
 
@@ -24,13 +24,10 @@
 
         <header class="navbar">
 
-<<<<<<< HEAD
-            <!-- <div class="log-nav"> -->
+          
             <h1 class="log-nav">Travel-tip</h1>
-            <!-- </div> -->
+          
 
-=======
->>>>>>> a41eda946d5bfa88dee60f1f95410a011cb5670c
             <div class="copy-nav">
                 <div class="copy-subnav">
                     <div class="copy-info"></div>
@@ -42,14 +39,6 @@
                     <button class="my-location-btn">My Location</button>
                 </div>
 
-<<<<<<< HEAD
-=======
-            <div class="log-nav">
-                <input type="text" class="set-location">
-                <button class="set-location-btn">GO</button>
-                <button class="my-location-btn">My Location</button>
-
->>>>>>> a41eda946d5bfa88dee60f1f95410a011cb5670c
             </div>
 
         </header>
@@ -61,7 +50,7 @@
                 <div class="weather-container"></div>
                 <div class="locations-container">
                     <ol class="locations">
-
+                        <!-- rendering -->
 
                     </ol>
                 </div>
@@ -74,15 +63,6 @@
         </footer>
     </section>
 
-<<<<<<< HEAD
-    <script>
-        function toggleMenu() {
-            document.body.classList.toggle('menu-open');
-        }
-    </script>
-=======
-
->>>>>>> a41eda946d5bfa88dee60f1f95410a011cb5670c
 
     <script type="module" src="js/map.contrroler.js"></script>
 </body>
