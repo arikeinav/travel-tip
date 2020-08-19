@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: lightblue;
+}
+/* Main Container */
+.container {
+   margin: 10px auto;
+    background-color: lightgreen;
+    min-height: 85vh;
+    max-width: 85vw;
+}
+/* Section with map and two info windows */
+.navigation-container {
+    display: flex;
+}
+
+.navigation-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 300px;
+    min-height: 300px;
+    background-color: #0080ff;
+}
+
+.weather-container {
+    flex-grow: 1;
+    background-color: #00ff80;
+}
+
+.locations-container {
+    flex-grow: 1;
+    background-color: #8080ff;
+}
+
+#map {
+    flex-grow: 1;
+}
+
+/* Footer */
+
+ footer {
+     position: static;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     background-color: #008080;
+ }
+
+ h5 {
+     background-color: #ff24ff;
+     display: inline-block;
+   
+ }
+ @media (max-width: 750px) {
+   .navigation-container {
+       flex-direction: column;
+   }
+ }

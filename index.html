@@ -5,12 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel-tip</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>Travel-tip</h1>
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button class="btn">Click Me</button>
+
+    <section class="container">
+
+        <header class="navbar">
+
+            <div class="log-nav">
+                <h1>Travel-tip</h1>
+                <input type="text" class="set-location">
+                <button class="set-location-btn">GO</button>
+                <button class="my-location-btn">My Location</button>
+            </div>
+            <div class="copy-nav">
+                <p class="copy-info">Location:</p>
+                <button class="copy-location-btn">Copy Location</button>
+            </div>
+
+        </header>
+
+        <main class="navigation-container">
+            <div id="map" style="width: 100%; height: 400px;"></div>
+
+            <div class="navigation-info-container">
+                <div class="weather-container"></div>
+                <div class="locations-container">
+                    <ul class="locations">
+                        <!-- rendering -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+
+        <footer>
+            <h5>Coffeerights</h5>
+        </footer>
+    </section>
 
     <script type="module" src="js/main.js"></script>
 </body>
