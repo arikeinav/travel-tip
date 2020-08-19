@@ -43,17 +43,24 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
             google.maps.event.addListener(map, 'click', function(e) {
                 var latitude = e.latLng.lat();
                 var longitude = e.latLng.lng();
+                var location;
                 addMarker(e.latLng)
-                var location = toggleMenu();
-                // var location = prompt('please enter the location name')
-                if (!location) return
-                locService.createLocation(location, latitude, longitude)
-                locService.getLocs()
-                    .then(locs => renderLocations(locs))
+                toggleMenu();
 
+                document.querySelector('.location-name-btn').onclick = function(ev) {
+                    location = document.querySelector('.location-name').value
+                    toggleMenu()
+                    if (!location) return
+                    locService.createLocation(location, latitude, longitude)
+                    locService.getLocs()
+                        .then(locs => renderLocations(locs))
+                }
             })
         })
 }
+
+
+
 
 function addMarker(loc) {
     var marker = new google.maps.Marker({
@@ -114,4 +121,9 @@ function addEvenetListeners() {
         }
 
     }
+}
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
+
 }
