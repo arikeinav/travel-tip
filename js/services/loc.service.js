@@ -1,7 +1,7 @@
 export const locService = {
-    getLocs: getLocs,
-    getPosition: getPosition,
-    createLocation: createLocation
+    getLocs,
+    getPosition,
+    createLocation
 }
 const KEY_LOC = 'locations'
 var locs;

@@ -92,9 +92,9 @@ function _connectGoogleApi() {
 function renderLocations(locs) {
 
     var strHtml = locs.map(function(location) {
-        return `<div class="location-details">${location.locationName}</div>`
+        return `<li class="location">${location.locationName}</li>`
     })
     console.log(locs)
-        // document.querySelector('.modal').innerHTML += strHtml
+    document.querySelector('.locations').innerHTML += strHtml.join('')
 
 }
